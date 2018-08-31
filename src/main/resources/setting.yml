@@ -1,0 +1,35 @@
+postgresql:
+  driver: org.postgresql.Driver
+  user: postgres
+  password: 1qaz2wsx
+
+auth:
+  url: http://localhost:8080/
+  db: jdbc:postgresql://172.19.0.3:5432/authdb
+  protocol: http
+  host: localhost
+  port: 8080
+  sync:
+    - aaa/forSystem/sync/unit
+    - aaa/forSystem/sync/user
+
+# cip
+syncare-service:
+  url: http://localhost:8083/
+  db: jdbc:postgresql://172.19.0.1:5432/cipdb
+  protocol: http
+  host: localhost
+  port: 8083
+  sync:
+    - cip/sync/device
+    - cip/sync/subject
+    - cip/sync/unitMeta
+    - cip/sync/emergencyContact
+
+#friend
+friend:
+  url: http://localhost:9453/
+  db: jdbc:postgresql://172.19.0.1:5432/frienddb
+  protocol: http
+  host: localhost
+  port: 9453
