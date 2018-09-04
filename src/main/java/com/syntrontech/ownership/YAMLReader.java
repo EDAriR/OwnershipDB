@@ -32,7 +32,7 @@ public class YAMLReader {
 
         } catch (FileNotFoundException e) {
             in = YAMLReader.class.getResourceAsStream("/setting.yml");
-            System.out.println("get defautl setting successful");
+            System.out.println("get setting fail use defautl setting successful");
 
         } catch (YAMLException e) {
             in = YAMLReader.class.getResourceAsStream("/setting.yml");

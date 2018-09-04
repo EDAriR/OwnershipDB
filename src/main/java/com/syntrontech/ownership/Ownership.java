@@ -6,7 +6,6 @@ public class Ownership {
 	
 	private Long sequence;
 
-
 	private String myId;
 	
 	private String userId;
@@ -81,5 +80,31 @@ public class Ownership {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getOwnershipStatus() {
+		return ownershipStatus;
+	}
+
+	public void setOwnershipStatus(String ownershipStatus) {
+		this.ownershipStatus = ownershipStatus;
+	}
+
+	public String getModelStatus() {
+		return modelStatus;
+	}
+
+	public void setModelStatus(String modelStatus) {
+		this.modelStatus = modelStatus;
+	}
+	
+	
 	
 }

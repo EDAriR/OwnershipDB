@@ -1,13 +1,15 @@
 package com.syntrontech.ownership;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class App {
 	public static void main(String[] args) throws SQLException{
-		
-		new UnitMetaJDBC().getUnitMetaById();
-	
-		System.out.println("Hello world");
-	}
 
+		List<StringBuilder> values = new CIPOwnershipJDBC().getAll();
+
+		values.forEach(v -> new FriendOwnershipJDBC().insert(v));
+
+		System.out.println("HI~");
+	}
 }
