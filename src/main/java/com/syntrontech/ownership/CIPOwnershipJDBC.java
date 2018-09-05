@@ -43,31 +43,31 @@ public class CIPOwnershipJDBC {
                     StringBuilder nextownership = new StringBuilder("(nextval('ownership_sequence_seq'),");
 
                 	String my_id = ifNullString(rs.getString("my_id"));
-                    nextownership.append(my_id).append(comma);
+                    nextownership.append("'" + my_id + "'").append(comma);
 
                     String user_id = ifNullString(rs.getString("user_id"));
-                    nextownership.append(user_id).append(comma);
+                    nextownership.append("'" + user_id + "'").append(comma);
 
                     String user_name = ifNullString(rs.getString("user_name"));
-                    nextownership.append(user_name).append(comma);
+                    nextownership.append("'" + user_name + "'").append(comma);
 
-                    String ownership_type = ifNullString(rs.getString("ownership_type"));
-                    nextownership.append(ownership_type).append(comma);
+                    String ownership_type = ifNullString(rs.getString("type"));
+                    nextownership.append("'" + ownership_type + "'").append(comma);
 
                     String ownership_status = ifNullString(rs.getString("ownership_status"));
-                    nextownership.append(ownership_status).append(comma);
+                    nextownership.append("'" + ownership_status + "'").append(comma);
 
                     String model_status = ifNullString(rs.getString("model_status"));
-                    nextownership.append(model_status).append(comma);
+                    nextownership.append("'" + model_status + "'").append(comma);
 
                     String tenant_id = ifNullString(rs.getString("tenant_id"));
-                    nextownership.append(tenant_id).append(comma);
+                    nextownership.append("'" + tenant_id + "'").append(comma);
 
-                    String create_time = ifNullString(rs.getString("create_time"));
-                    nextownership.append(create_time).append(comma);
+//                    String create_time = ifNullString(rs.getString("create_time"));
+                    nextownership.append("now()").append(comma);
 
-                    String update_time = ifNullString(rs.getString("update_time"));
-                    nextownership.append(update_time).append(rightparenthesis);
+//                    String update_time = ifNullString(rs.getString("update_time"));
+                    nextownership.append("now()").append(rightparenthesis);
 
                     stringBuilders.add(nextownership);
                 }
@@ -75,6 +75,7 @@ public class CIPOwnershipJDBC {
 
         } catch (SQLException e) {
             logger.info("CIPOwnershipJDBC getAll fail " + pstmt);
+            e.printStackTrace();
         } finally {
             try {
                 if (pstmt != null)

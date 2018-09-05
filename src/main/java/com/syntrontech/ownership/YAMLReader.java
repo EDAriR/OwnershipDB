@@ -10,6 +10,7 @@ import java.util.Map;
 public class YAMLReader {
 
     public static String getSetting(String key1, String key2) throws YAMLException {
+        System.out.println("YAMLReader ==> key1:" + key1 + ", key2:" + key2);
         return getSetting(key1).get(key2);
     }
 

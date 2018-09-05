@@ -13,7 +13,8 @@ public class CIP_GET_CONNECTION {
 
     private static Logger logger = LoggerFactory.getLogger(CIP_GET_CONNECTION.class);
 
-    private static final String DRIVER_PATH = getSetting("postgresql", "driver");
+//    private static final String DRIVER_PATH = getSetting("postgresql", "driver");
+    private static final String DRIVER_PATH = "org.postgresql.Driver";
     private static final String DB_PATH = getSetting("syncare-service", "db");
     private static final String DB_USER = getSetting("postgresql", "user");
     private static final String DB_PASSWORD = getSetting("postgresql", "password");
