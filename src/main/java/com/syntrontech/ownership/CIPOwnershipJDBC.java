@@ -63,7 +63,6 @@ public class CIPOwnershipJDBC {
 
                     nextownership.append("'" + ownership_status + "'").append(comma);
 
-                    String model_status = ifNullString(rs.getString("model_status"));
                     nextownership.append("'ENABLED'").append(comma);
 
                     String tenant_id = ifNullString(rs.getString("tenant_id"));
