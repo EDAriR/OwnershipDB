@@ -51,14 +51,20 @@ public class CIPOwnershipJDBC {
                     String user_name = ifNullString(rs.getString("user_name"));
                     nextownership.append("'" + user_name + "'").append(comma);
 
-                    String ownership_type = ifNullString(rs.getString("type"));
-                    nextownership.append("'" + ownership_type + "'").append(comma);
+                    nextownership.append("'VITALS'").append(comma);
 
                     String ownership_status = ifNullString(rs.getString("ownership_status"));
+                    if(ownership_status.equals("0") || ownership_status.equals("WAITING_FOR_CONSENT"))
+                        ownership_status = "WAITING_FOR_CONSENT";
+                    else if (ownership_status.equals("1") || ownership_status.equals("CONSENT"))
+                        ownership_status = "CONSENT";
+                    else
+                        ownership_status = "WAITING_FOR_CONSENT";
+
                     nextownership.append("'" + ownership_status + "'").append(comma);
 
                     String model_status = ifNullString(rs.getString("model_status"));
-                    nextownership.append("'" + model_status + "'").append(comma);
+                    nextownership.append("'ENABLED'").append(comma);
 
                     String tenant_id = ifNullString(rs.getString("tenant_id"));
                     nextownership.append("'" + tenant_id + "'").append(comma);
